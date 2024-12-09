@@ -36,6 +36,7 @@ dependencies:
   circular_countdown_timer: ^0.2.3
   numberpicker: ^2.1.2
   soundpool: ^2.4.1
+  gh_pages: ^0.1.1
 
 dev_dependencies:
   flutter_test:
