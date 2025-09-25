@@ -3,7 +3,6 @@ import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lumberdash/lumberdash.dart';
-import 'package:ring_helper/sounds.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:utilities/utilities.dart';
 
@@ -42,7 +41,7 @@ class _MainAppState extends ConsumerState<MainApp> {
         return;
       }
       initialized = true;
-      ref.read(soundProvider).loadSound(alarm);
+      // ref.read(soundProvider).loadSound(alarm);
     });
     return MaterialApp.router(
       routerConfig: ref.read(routeProvider).config(),

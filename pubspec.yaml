@@ -1,20 +1,19 @@
 name: ring_helper
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 1.0.2+3
 
 environment:
-  sdk: '>=3.3.1 <4.0.0'
+  sdk: '>=3.6.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.6
-  collection: ^1.17.1
-  shared_preferences: ^2.2.2
-  json_annotation: ^4.8.1
-  freezed_annotation: ^2.4.1
+  collection: ^1.19.0
+  shared_preferences: ^2.3.5
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
   auto_size_text: ^3.0.0
   flutter_svg: ^2.0.10+1
   flutter_riverpod: ^2.5.1
@@ -22,37 +21,44 @@ dependencies:
   riverpod_annotation: ^2.3.5
   lumberdash: ^3.0.0
   colorize_lumberdash: ^3.0.0
-  desktop_window: ^0.4.0
+  desktop_window: ^0.4.2
   flutter_adaptive_scaffold: ^0.1.8
   group_list_view: ^1.1.1
   utilities:
     path: ../utilities/
   desktop_lifecycle: ^0.1.1
-  auto_route: ^7.9.2
-  # Has to be 18.1 for intl
-  intl: ^0.18.1
+  auto_route: ^9.3.0+1
+  intl: ^0.20.1
+
   material_symbols_icons: ^4.2719.3
-  stop_watch_timer: ^3.1.1
-  circular_countdown_timer: ^0.2.3
+  stop_watch_timer: ^3.2.1
+  circular_countdown_timer: ^0.2.4
   numberpicker: ^2.1.2
-  soundpool: ^2.4.1
+#  soundpool: ^2.4.1
   gh_pages: ^0.1.1
+#  Added this to fix build error
+  win32: ^5.10.0
+  audioplayers: ^6.4.0
+  cupertino_icons: ^1.0.8
+
+dependency_overrides:
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   build_runner: ^2.4.8
-  json_serializable: ^6.7.1
-  freezed: ^2.4.7
-  flutter_lints: ^3.0.1
-  auto_route_generator: ^7.3.2
+  json_serializable: ^6.9.4
+  freezed: ^3.0.3
+  flutter_lints: ^5.0.0
+  auto_route_generator: ^9.3.1
   # the code generator
-  riverpod_generator: ^2.4.0
+  riverpod_generator: ^2.6.5
 
 flutter:
 
   uses-material-design: true
 
   assets:
-    - sounds/
+    - assets/

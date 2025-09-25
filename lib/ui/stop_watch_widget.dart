@@ -1,6 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lumberdash/lumberdash.dart';
 import 'package:ring_helper/ui/stop_watch.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:utilities/utilities.dart';
@@ -26,6 +27,7 @@ class _StopWatchWidgetState extends ConsumerState<StopWatchWidget> {
   StopWatchState state = StopWatchState.initial;
   late StopWatchTimer stopWatchTimer;
   int rawTime = 0;
+  late StreamSubscription stopWatchSubscription;
 
   @override
   void initState() {
@@ -36,9 +38,20 @@ class _StopWatchWidgetState extends ConsumerState<StopWatchWidget> {
     stopWatchTimer = StopWatchTimer(
         mode:
         widget.countDown ? StopWatchMode.countDown : StopWatchMode.countUp, presetMillisecond: widget.startTime.inMilliseconds);
-    stopWatchTimer.rawTime.listen((value) => setState(() {
+    stopWatchSubscription = stopWatchTimer.rawTime.listen((value) {
+      if (mounted) {
+        setState(() {
           rawTime = value;
-        }));
+        });
+      }
+    });
+  }
+
+
+  @override
+  void dispose() {
+    stopWatchSubscription.cancel();
+    super.dispose();
   }
 
   int getTime(int number) {

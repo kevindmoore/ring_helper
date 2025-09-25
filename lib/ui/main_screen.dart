@@ -1,10 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lumberdash/lumberdash.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
-import '../providers.dart';
 import '../router/app_routes.dart';
 
 @RoutePage()
@@ -32,7 +30,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         TimerRoute(),
         StopWatchRoute(),
         SparringRoute(),
-        HelpRoute(),
+        // HelpRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) => buildBottomBar(tabsRouter),
     );
@@ -49,8 +47,8 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         BottomNavigationBarItem(
             icon: Icon(Symbols.watch), label: 'StopWatch'),
         BottomNavigationBarItem(icon: Icon(Icons.accessibility), label: 'Sparring'),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.help), label: 'Help'),
+        // BottomNavigationBarItem(
+        //     icon: Icon(Icons.help), label: 'Help'),
       ],
       currentIndex: tabsRouter.activeIndex,
       onTap: (index) {
